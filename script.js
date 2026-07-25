@@ -1,15 +1,16 @@
-const startBtn = document.getElementById("startBtn");
-const welcome = document.getElementById("welcomeMessage");
-
-const continueBtn = document.getElementById("continueBtn");
-
+const page1 = document.getElementById("page1");
 const page2 = document.getElementById("page2");
-const storyText = document.getElementById("storyText");
+const page3 = document.getElementById("page3");
+
+const startBtn = document.getElementById("startBtn");
+const continueBtn = document.getElementById("continueBtn");
 const nextBtn = document.getElementById("nextBtn");
+
+const storyText = document.getElementById("storyText");
 
 const hearts = document.getElementById("hearts");
 
-// Floating hearts
+// Floating Hearts
 setInterval(() => {
 
     const heart = document.createElement("div");
@@ -30,28 +31,38 @@ setInterval(() => {
 
 }, 350);
 
-// Start button
+
+// PAGE 1 → PAGE 2
 startBtn.onclick = function () {
 
-    startBtn.style.display = "none";
+    page1.classList.add("hidden");
 
-    welcome.classList.remove("hidden");
+    page2.classList.remove("hidden");
 
 };
 
-// Continue button
+
+// PAGE 2 → PAGE 3
 continueBtn.onclick = function () {
 
-    welcome.classList.add("hidden");
+    page2.classList.add("hidden");
 
-page2.classList.remove("hidden");
+    page3.classList.remove("hidden");
 
     const message =
-        "There is something I've been wanting to tell you...\n\nI wasn't sure how to say it...\n\nSo I thought I'd build a little website instead. 😊";
+`Sometimes...
+
+there are things...
+
+that are easier to write...
+
+than to say...`;
 
     let i = 0;
 
     storyText.innerHTML = "";
+
+    nextBtn.classList.add("hidden");
 
     function typeWriter() {
 
@@ -69,7 +80,7 @@ page2.classList.remove("hidden");
 
             i++;
 
-            setTimeout(typeWriter, 45);
+            setTimeout(typeWriter, 60);
 
         } else {
 
@@ -83,9 +94,10 @@ page2.classList.remove("hidden");
 
 };
 
-// Next button
+
+// Temporary
 nextBtn.onclick = function () {
 
-    alert("🎉 Great! In the next lesson, we'll build the fun questions screen.");
+    alert("Lesson 9 will start from here 😊");
 
 };
