@@ -3,7 +3,7 @@ const welcome = document.getElementById("welcomeMessage");
 
 const continueBtn = document.getElementById("continueBtn");
 
-const storyPage = document.getElementById("storyPage");
+const page2 = document.getElementById("page2");
 const storyText = document.getElementById("storyText");
 const nextBtn = document.getElementById("nextBtn");
 
@@ -44,7 +44,7 @@ continueBtn.onclick = function () {
 
     welcome.classList.add("hidden");
 
-    storyPage.classList.remove("hidden");
+page2.classList.remove("hidden");
 
     const message =
         "There is something I've been wanting to tell you...\n\nI wasn't sure how to say it...\n\nSo I thought I'd build a little website instead. 😊";
