@@ -1,259 +1,164 @@
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,Helvetica,sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
 
-height:100vh;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-overflow:hidden;
-
-background:linear-gradient(-45deg,#ff9a9e,#fad0c4,#fad0c4,#ffd1ff);
-
-background-size:400% 400%;
-
-animation:bgMove 12s ease infinite;
-
+    background:linear-gradient(-45deg,#ff9a9e,#fad0c4,#ffd1dc,#ffe6f2);
+    background-size:400% 400%;
+    animation:bgMove 12s ease infinite;
 }
 
 @keyframes bgMove{
-
-0%{background-position:0% 50%;}
-
-50%{background-position:100% 50%;}
-
-100%{background-position:0% 50%;}
-
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
 }
 
 .container{
+    position:relative;
+    z-index:10;
 
-position:relative;
+    width:420px;
+    max-width:90%;
 
-z-index:10;
+    padding:45px;
 
-width:420px;
+    text-align:center;
 
-padding:45px;
+    background:rgba(255,255,255,.28);
+    backdrop-filter:blur(14px);
 
-text-align:center;
+    border-radius:25px;
 
-background:rgba(255,255,255,.25);
+    box-shadow:0 18px 40px rgba(0,0,0,.18);
 
-backdrop-filter:blur(12px);
-
-border-radius:25px;
-
-box-shadow:0 15px 35px rgba(0,0,0,.2);
-
-animation:fadeUp 1s;
-
+    animation:fadeUp .8s ease;
 }
 
 @keyframes fadeUp{
-
-from{
-
-opacity:0;
-
-transform:translateY(40px);
-
-}
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
 h1{
-
-font-size:42px;
-
-font-weight:700;
-
-color:#C2185B;
-
-margin-bottom:20px;
-
-}
-
-font-size:40px;
-
-color:#5C374C;
-
-margin-bottom:20px;
-
-}
-
-p{
-
-font-size:20px;
-
-color:#5C374C;
-
-font-weight:600;
-
-line-height:1.8;
-
-margin-bottom:35px;
-
-}
-
-font-size:20px;
-
-color:#5C374C;
-
-line-height:1.6;
-
-margin-bottom:35px;
-
-}
-
-button{
-
-padding:15px 35px;
-
-border:none;
-
-border-radius:50px;
-
-background:#5C374C;
-
-color:#ff4081;
-
-font-size:18px;
-
-cursor:pointer;
-
-transition:.3s;
-
-}
-
-button:hover{
-
-transform:scale(1.08);
-
-}
-
-#hearts{
-
-position:fixed;
-
-width:100%;
-
-height:100%;
-
-pointer-events:none;
-
-overflow:hidden;
-
-}
-
-.heart{
-
-position:absolute;
-
-font-size:25px;
-
-animation:float 6s linear forwards;
-
-}
-
-@keyframes float{
-
-0%{
-
-transform:translateY(100vh);
-
-opacity:1;
-
-}
-
-100%{
-
-transform:translateY(-150px);
-
-opacity:0;
-
-}
-
-}
-.hidden{
-display:none;
-}
-
-#welcomeMessage{
-
-margin-top:30px;
-
-animation:fadeIn .8s;
-
-}
-
-@keyframes fadeIn{
-
-from{
-opacity:0;
-transform:translateY(20px);
-}
-
-to{
-opacity:1;
-transform:translateY(0);
-}
-
+    font-size:42px;
+    font-weight:bold;
+    color:#C2185B;
+    margin-bottom:20px;
 }
 
 h2{
-
-color:#C2185B;
-
-font-size:32px;
-
-font-weight:700;
-
-margin-bottom:20px;
-
+    font-size:32px;
+    font-weight:bold;
+    color:#C2185B;
+    margin-bottom:20px;
 }
 
-#storyPage{
+p{
+    font-size:20px;
+    font-weight:bold;
+    color:#C2185B;
+    line-height:1.8;
+    margin-bottom:35px;
+}
 
-    margin-top:30px;
+button{
+    padding:15px 35px;
 
-    animation:fadeIn .8s;
+    border:none;
+    border-radius:50px;
 
+    background:#C2185B;
+    color:#FFFFFF;
+
+    font-size:18px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:all .3s ease;
+
+    box-shadow:0 8px 18px rgba(194,24,91,.25);
+}
+
+button:hover{
+    transform:scale(1.06);
+    background:#AD1457;
+}
+
+.hidden{
+    display:none;
 }
 
 #storyText{
-
     min-height:140px;
 
     font-size:22px;
+    font-weight:bold;
 
-    font-weight:600;
-
-    color:#5C374C;
+    color:#C2185B;
 
     line-height:1.8;
-
 }
 
 #nextBtn{
-
     margin-top:20px;
+}
 
+#welcomeMessage,
+#storyPage{
+    margin-top:30px;
+    animation:fadeIn .8s;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+#hearts{
+    position:fixed;
+    inset:0;
+
+    pointer-events:none;
+    overflow:hidden;
+}
+
+.heart{
+    position:absolute;
+    font-size:25px;
+    animation:float 6s linear forwards;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(100vh);
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-150px);
+        opacity:0;
+    }
 }
