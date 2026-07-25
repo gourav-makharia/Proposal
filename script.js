@@ -43,6 +43,8 @@ startBtn.onclick = function () {
 // Temporary
 nextBtn.onclick = function () {
 
-    alert("Lesson 9 will start from here 😊");
+    page2.classList.add("hidden");
+
+    // We'll show the proposal page here in the next step.
 
 };
