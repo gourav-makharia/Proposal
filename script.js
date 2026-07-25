@@ -1,29 +1,11 @@
-const hearts=document.getElementById("hearts");
+const startBtn=document.getElementById("startBtn");
 
-setInterval(()=>{
+const welcome=document.getElementById("welcomeMessage");
 
-const heart=document.createElement("div");
+startBtn.onclick=function(){
 
-heart.className="heart";
+startBtn.style.display="none";
 
-heart.innerHTML="❤️";
+welcome.classList.remove("hidden");
 
-heart.style.left=Math.random()*100+"vw";
-
-heart.style.fontSize=(20+Math.random()*20)+"px";
-
-hearts.appendChild(heart);
-
-setTimeout(()=>{
-
-heart.remove();
-
-},6000);
-
-},350);
-
-document.getElementById("startBtn").onclick=function(){
-
-alert("Welcome ❤️\n\nOur story is about to begin...");
-
-};
+}
