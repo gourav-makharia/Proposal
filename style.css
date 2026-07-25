@@ -229,3 +229,31 @@ font-weight:700;
 margin-bottom:20px;
 
 }
+
+#storyPage{
+
+    margin-top:30px;
+
+    animation:fadeIn .8s;
+
+}
+
+#storyText{
+
+    min-height:140px;
+
+    font-size:22px;
+
+    font-weight:600;
+
+    color:#5C374C;
+
+    line-height:1.8;
+
+}
+
+#nextBtn{
+
+    margin-top:20px;
+
+}
