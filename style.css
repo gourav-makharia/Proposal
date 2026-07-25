@@ -81,6 +81,16 @@ transform:translateY(0);
 
 h1{
 
+font-size:42px;
+
+font-weight:700;
+
+color:#C2185B;
+
+margin-bottom:20px;
+
+}
+
 font-size:40px;
 
 color:#5C374C;
@@ -90,6 +100,18 @@ margin-bottom:20px;
 }
 
 p{
+
+font-size:20px;
+
+color:#5C374C;
+
+font-weight:600;
+
+line-height:1.8;
+
+margin-bottom:35px;
+
+}
 
 font-size:20px;
 
@@ -193,5 +215,17 @@ to{
 opacity:1;
 transform:translateY(0);
 }
+
+}
+
+h2{
+
+color:#C2185B;
+
+font-size:32px;
+
+font-weight:700;
+
+margin-bottom:20px;
 
 }
