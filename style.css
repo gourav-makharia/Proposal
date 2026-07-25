@@ -162,3 +162,8 @@ button:hover{
         opacity:0;
     }
 }
+
+#cuteSticker{
+    width:170px;
+    margin-bottom:15px;
+}
