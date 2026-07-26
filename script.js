@@ -1,8 +1,8 @@
 // =====================================================
 // ✏️ EDIT THIS BEFORE YOU SHARE THE LINK
 // =====================================================
-const HER_NAME = "Priya";           // e.g. "Ananya" — only used in the message she can send you, leave blank to skip
-const WHATSAPP_NUMBER = "8763343695";    // your number with country code, digits only, e.g. "9198XXXXXXX" (no +, no spaces)
+const HER_NAME = "";           // e.g. "Ananya" — only used in the message she can send you, leave blank to skip
+const WHATSAPP_NUMBER = "";    // your number with country code, digits only, e.g. "9198XXXXXXX" (no +, no spaces)
 // =====================================================
 
 const page1 = document.getElementById("page1");
@@ -65,12 +65,17 @@ nextBtn.onclick = function () {
 /* =====================================================
    PAGE 3 — the dodging "no" button
    ===================================================== */
-const dodgeZone = document.getElementById("dodgeZone");
 const yesBtn = document.getElementById("yesBtn");
 const noBtn = document.getElementById("noBtn");
 const taunt = document.getElementById("taunt");
 
-const TAUNTS = ["nope 🙈", "try again", "so close", "not today", "yeah... no", "can't catch me", "nice try 😄", "almost!"];
+const TAUNTS = [
+    "nope 🙈", "try again", "so close", "not today", "yeah... no",
+    "can't catch me", "nice try 😄", "almost!", "keep dreaming 💭",
+    "swing and a miss!", "you'll never get me 😝", "this button is shy 🙈",
+    "no means no 😌", "too slow 💨", "better luck next time",
+    "still a no from me 😌", "aww, so close though", "not happening, cutie"
+];
 let dodgeCount = 0;
 let lastDodgeTime = 0;
 
@@ -79,24 +84,24 @@ function dodge() {
     if (now - lastDodgeTime < 120) return; // stop double-fires from overlapping events
     lastDodgeTime = now;
 
-    const zoneRect = dodgeZone.getBoundingClientRect();
     const btnRect = noBtn.getBoundingClientRect();
+    const padding = 16;
 
     if (!noBtn.classList.contains("dodging")) {
-        // lock the current visual spot first so switching to absolute doesn't jump
-        noBtn.style.left = (btnRect.left - zoneRect.left) + "px";
-        noBtn.style.top = (btnRect.top - zoneRect.top) + "px";
+        // lock the current on-screen spot first so switching to "fixed" doesn't jump
+        noBtn.style.left = btnRect.left + "px";
+        noBtn.style.top = btnRect.top + "px";
         noBtn.classList.add("dodging");
         void noBtn.offsetWidth; // force reflow before animating to the new spot
     }
 
-    const maxLeft = Math.max(zoneRect.width - btnRect.width, 0);
-    const maxTop = Math.max(zoneRect.height - btnRect.height, 0);
-    noBtn.style.left = Math.random() * maxLeft + "px";
-    noBtn.style.top = Math.random() * maxTop + "px";
+    // roam the whole visible page, not just a small box
+    const maxLeft = Math.max(window.innerWidth - btnRect.width - padding * 2, 0);
+    const maxTop = Math.max(window.innerHeight - btnRect.height - padding * 2, 0);
+    noBtn.style.left = (padding + Math.random() * maxLeft) + "px";
+    noBtn.style.top = (padding + Math.random() * maxTop) + "px";
 
     dodgeCount = Math.min(dodgeCount + 1, 8);
-    yesBtn.style.transform = `scale(${1 + dodgeCount * 0.045})`;
     noBtn.style.transform = `scale(${Math.max(1 - dodgeCount * 0.05, 0.55)})`;
 
     taunt.textContent = TAUNTS[Math.floor(Math.random() * TAUNTS.length)];
