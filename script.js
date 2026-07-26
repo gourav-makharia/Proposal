@@ -1,8 +1,8 @@
 // =====================================================
 // ✏️ EDIT THIS BEFORE YOU SHARE THE LINK
 // =====================================================
-const HER_NAME = "";           // e.g. "Ananya" — only used in the message she can send you, leave blank to skip
-const WHATSAPP_NUMBER = "";    // your number with country code, digits only, e.g. "9198XXXXXXX" (no +, no spaces)
+const HER_NAME = "Priya";           // e.g. "Ananya" — only used in the message she can send you, leave blank to skip
+const WHATSAPP_NUMBER = "8763343695";    // your number with country code, digits only, e.g. "9198XXXXXXX" (no +, no spaces)
 // =====================================================
 
 const page1 = document.getElementById("page1");
