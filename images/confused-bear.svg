@@ -1,0 +1,44 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A cute confused bear scratching its head">
+  <!-- sticker backing -->
+  <circle cx="100" cy="102" r="94" fill="#FFFFFF"/>
+  <circle cx="100" cy="102" r="94" fill="none" stroke="#F8D7E3" stroke-width="3"/>
+
+  <!-- ears -->
+  <circle cx="58" cy="58" r="22" fill="#D9A066"/>
+  <circle cx="142" cy="58" r="22" fill="#D9A066"/>
+  <circle cx="58" cy="58" r="11" fill="#F5DEC0"/>
+  <circle cx="142" cy="58" r="11" fill="#F5DEC0"/>
+
+  <!-- head -->
+  <circle cx="100" cy="110" r="62" fill="#D9A066"/>
+
+  <!-- muzzle -->
+  <ellipse cx="100" cy="128" rx="32" ry="24" fill="#F5DEC0"/>
+
+  <!-- blush -->
+  <ellipse cx="66" cy="118" rx="10" ry="6" fill="#F6A9C0" opacity="0.65"/>
+  <ellipse cx="134" cy="118" rx="10" ry="6" fill="#F6A9C0" opacity="0.65"/>
+
+  <!-- eyebrow (raised - confused) -->
+  <path d="M66 78 Q77 67 88 77" stroke="#4A2E1A" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+
+  <!-- eyes: left round, right squinty -->
+  <circle cx="78" cy="98" r="6" fill="#4A2E1A"/>
+  <path d="M110 98 Q118 89 126 98" stroke="#4A2E1A" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+  <!-- nose -->
+  <ellipse cx="100" cy="122" rx="7" ry="5" fill="#4A2E1A"/>
+
+  <!-- mouth -->
+  <path d="M86 140 Q100 149 114 140" stroke="#4A2E1A" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+  <!-- raised paw near head, scratching -->
+  <circle cx="140" cy="65" r="17" fill="#D9A066"/>
+  <ellipse cx="133" cy="70" rx="3.5" ry="4.5" fill="#F5DEC0"/>
+  <ellipse cx="141" cy="67" rx="3.5" ry="4.5" fill="#F5DEC0"/>
+  <ellipse cx="148" cy="72" rx="3.5" ry="4.5" fill="#F5DEC0"/>
+
+  <!-- floating question marks -->
+  <text x="122" y="42" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="bold" fill="#C2185B">?</text>
+  <text x="142" y="56" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#C2185B" opacity="0.7">?</text>
+</svg>
