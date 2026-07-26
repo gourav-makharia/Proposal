@@ -59,6 +59,93 @@
                
         </div>
 
+        <!-- PAGE 3 -->
+        <div id="page3" class="hidden">
+
+            <h2>Will you go on a date with me? 🥺</h2>
+
+            <div id="dodgeZone">
+                <button id="yesBtn" type="button">YES 💕</button>
+                <button id="noBtn" type="button">no...</button>
+            </div>
+
+            <p id="taunt">&nbsp;</p>
+
+        </div>
+
+        <!-- PAGE 4 -->
+        <div id="page4" class="hidden">
+
+            <h2>So... when are you free? 📅🐾</h2>
+
+            <label for="dateInput">Pick a day</label>
+            <input type="date" id="dateInput">
+
+            <label for="timeInput">What time?</label>
+            <select id="timeInput">
+                <option value="" disabled selected>Select a time...</option>
+                <option value="5:00 PM">5:00 PM — we eating with the retirees</option>
+                <option value="6:00 PM">6:00 PM — this is the right answer tbh</option>
+                <option value="7:00 PM">7:00 PM — you're making me hungry already</option>
+                <option value="8:00 PM">8:00 PM — we eating dinner or breakfast?</option>
+            </select>
+
+            <button id="next4Btn" type="button" disabled>Next →</button>
+
+        </div>
+
+        <!-- PAGE 5 -->
+        <div id="page5" class="hidden">
+
+            <h2>Where in Kolkata? 📍</h2>
+
+            <div class="chip-grid" id="placeChips">
+                <button type="button" class="chip" data-value="Victoria Memorial &amp; Maidan">🏛️ Victoria Memorial</button>
+                <button type="button" class="chip" data-value="Prinsep Ghat">🌇 Prinsep Ghat</button>
+                <button type="button" class="chip" data-value="Eco Park, New Town">🌳 Eco Park</button>
+                <button type="button" class="chip" data-value="Millennium Park">🌊 Millennium Park</button>
+                <button type="button" class="chip" data-value="Park Street">✨ Park Street</button>
+                <button type="button" class="chip" data-value="A mall + movie">🎬 Mall + Movie</button>
+                <button type="button" class="chip chip-other" data-value="other">💭 Somewhere else</button>
+            </div>
+            <input type="text" id="placeOtherInput" class="text-input hidden" placeholder="Tell me where you'd like to go">
+
+            <button id="next5Btn" type="button" disabled>Next →</button>
+
+        </div>
+
+        <!-- PAGE 6 -->
+        <div id="page6" class="hidden">
+
+            <h2>What are you craving? 🍽️</h2>
+
+            <div class="chip-grid" id="foodChips">
+                <button type="button" class="chip" data-value="Bengali thali">🐟 Bengali Thali</button>
+                <button type="button" class="chip" data-value="Biryani &amp; Mughlai">🍗 Biryani</button>
+                <button type="button" class="chip" data-value="Chinese &amp; momos">🥟 Chinese</button>
+                <button type="button" class="chip" data-value="Italian">🍝 Italian</button>
+                <button type="button" class="chip" data-value="Cafe &amp; desserts">🍰 Cafe / Dessert</button>
+                <button type="button" class="chip chip-other" data-value="other">💭 Surprise me</button>
+            </div>
+            <input type="text" id="foodOtherInput" class="text-input hidden" placeholder="What sounds good?">
+
+            <button id="submitBtn" type="button" disabled>See our date →</button>
+
+        </div>
+
+        <!-- PAGE 7 -->
+        <div id="page7" class="hidden">
+
+            <h2>It's a date! 🥂</h2>
+
+            <div id="summaryCard"></div>
+
+            <button id="sendBtn" type="button">Send him the details 💌</button>
+            <button id="copyBtn" type="button">Copy message instead</button>
+            <p id="copyHint" class="hidden">Copied! Paste it to him anywhere 💌</p>
+
+        </div>
+
     </div>
 
     <script src="script.js"></script>
