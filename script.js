@@ -2,7 +2,7 @@
 // ✏️ EDIT THIS BEFORE YOU SHARE THE LINK
 // =====================================================
 const HER_NAME = "";           // e.g. "Ananya" — only used in the message she can send you, leave blank to skip
-const WHATSAPP_NUMBER = "";    // your number with country code, digits only, e.g. "9198XXXXXXX" (no +, no spaces)
+const WHATSAPP_NUMBER = "918763343695"; // your number with country code, digits only (no +, no spaces)
 // =====================================================
 
 const page1 = document.getElementById("page1");
@@ -88,10 +88,19 @@ function dodge() {
     const padding = 16;
 
     if (!noBtn.classList.contains("dodging")) {
-        // lock the current on-screen spot first so switching to "fixed" doesn't jump
-        noBtn.style.left = btnRect.left + "px";
-        noBtn.style.top = btnRect.top + "px";
+        // lock the current on-screen spot first (in real viewport coordinates)
+        const startLeft = btnRect.left;
+        const startTop = btnRect.top;
+
+        // .container uses backdrop-filter, which (like transform) makes it the
+        // positioning boundary for any "fixed" element inside it — so move the
+        // button out to <body> first, or "fixed" ends up measured against the
+        // small card instead of the actual screen and can land off-page.
+        document.body.appendChild(noBtn);
+
         noBtn.classList.add("dodging");
+        noBtn.style.left = startLeft + "px";
+        noBtn.style.top = startTop + "px";
         void noBtn.offsetWidth; // force reflow before animating to the new spot
     }
 
@@ -113,6 +122,7 @@ noBtn.addEventListener("focus", dodge);
 noBtn.addEventListener("click", (e) => { e.preventDefault(); dodge(); });
 
 yesBtn.addEventListener("click", () => {
+    noBtn.style.display = "none"; // it now lives in <body>, so hiding page3 alone won't hide it
     page3.classList.add("hidden");
     page4.classList.remove("hidden");
 });
@@ -258,7 +268,7 @@ function copyMessage(message) {
 document.getElementById("sendBtn").addEventListener("click", () => {
     const message = buildMessage();
     if (WHATSAPP_NUMBER) {
-        window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, "_blank", "noopener");
+        window.location.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
     } else {
         copyMessage(message); // no number set yet — fall back to copy so nothing is lost
     }
